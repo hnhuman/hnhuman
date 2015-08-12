@@ -4,4 +4,9 @@
   <artifactId>hnhuman</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
+  <modules>
+  	<module>core</module>
+  	<module>hnhunan-core</module>
+  	<module>hnhunan-entity</module>
+  </modules>
 </project>
