@@ -1,6 +1,8 @@
 package com.hnhuman.dao.base;
 
-public interface HnHumanDao {
+import com.hnhuman.entity.HnHuman;
 
-	public void find(Long id);
+public interface HnHumanDao extends BaseDao<HnHuman, Long>{
+
+	public HnHuman find(Long id);
 }
