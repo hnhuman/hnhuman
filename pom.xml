@@ -5,9 +5,8 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
   <modules>
-  	<module>core</module>
-  	<module>hnhunan-core</module>
-  	<module>hnhunan-entity</module>
+  	<module>hnhuman-core</module>
+  	<module>hnhuman-entity</module>
   	<module>hnhuman-dao</module>
   </modules>
   

@@ -5,6 +5,14 @@
     <artifactId>hnhuman</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <groupId>hnhuman-dao</groupId>
+  <groupId>com.hnhuman</groupId>
   <artifactId>hnhuman-dao</artifactId>
+  
+  <dependencies>
+  		<dependency>
+			<groupId>com.hnhuman</groupId>
+			<artifactId>hnhuman-entity</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+  </dependencies>
 </project>
