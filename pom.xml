@@ -8,6 +8,8 @@
   	<module>hnhuman-core</module>
   	<module>hnhuman-entity</module>
   	<module>hnhuman-dao</module>
+  	<module>hnhuman-service</module>
+  	<module>hnhuman-web</module>
   </modules>
   
   <properties>
