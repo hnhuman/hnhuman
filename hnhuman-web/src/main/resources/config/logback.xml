@@ -1,0 +1,30 @@
+<configuration scan="true" scanPeriod="60 seconds">
+	<appender name="ROLLING" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>D:/software/apache-tomcat-7.0.47-windows-x64/apache-tomcat-7.0.47/logs/hnhuman.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<Encoding>UTF-8</Encoding>
+			<!-- <fileNamePattern>${catalina.home}/elecscrlogs/elecscr-%d{yyyy-MM-dd}.%i.log -->
+			<fileNamePattern>D:/software/apache-tomcat-7.0.47-windows-x64/apache-tomcat-7.0.47/logs/hnhuman-%d{yyyy-MM-dd}.%i.log
+			</fileNamePattern>
+			<maxHistory>30</maxHistory>
+			<TimeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<MaxFileSize>50MB</MaxFileSize>
+			</TimeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+	
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+
+	<root level="INFO">
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="ROLLING" />
+	</root>
+</configuration>
