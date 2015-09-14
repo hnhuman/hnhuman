@@ -11,5 +11,18 @@
 	<context:component-scan base-package="com.hnhuman.*">
 		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
 	</context:component-scan>
+	
+	
+	<!-- 配置分离配置 -->
+	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location">
+			<value>classpath:env/local/hnhuman.properties</value>
+			<!-- 配置分离用 -->
+			<!-- <value>file:/home/webdata/hnhuman/webroot/config/hnhuman.properties</value>-->
+		</property>
+		<property name="fileEncoding">
+			<value>UTF-8</value>
+		</property>
+	</bean>
 
 </beans>
