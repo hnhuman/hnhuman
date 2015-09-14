@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <configuration scan="true" scanPeriod="60 seconds">
 	<appender name="ROLLING" class="ch.qos.logback.core.rolling.RollingFileAppender">
 		<file>D:/software/apache-tomcat-7.0.47-windows-x64/apache-tomcat-7.0.47/logs/hnhuman.log</file>
