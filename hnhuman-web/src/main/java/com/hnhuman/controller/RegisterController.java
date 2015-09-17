@@ -25,6 +25,6 @@ public class RegisterController {
 	@RequestMapping(method = RequestMethod.GET)
 	public String index(HttpServletRequest request, HttpServletResponse response, ModelMap model) {
 		model.addAttribute("genders", Gender.values());
-		return "/register/index";
+		return "/view/register/index";
 	}
 }
