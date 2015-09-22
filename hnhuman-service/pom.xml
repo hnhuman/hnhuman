@@ -14,5 +14,10 @@
 			<artifactId>hnhuman-dao</artifactId>
 			<version>${project.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>com.hnhuman</groupId>
+			<artifactId>hnhuman-core</artifactId>
+			<version>${project.version}</version>
+		</dependency>
   </dependencies>
 </project>
