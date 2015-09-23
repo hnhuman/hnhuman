@@ -11,7 +11,7 @@ public interface SmsService {
 	 * 检查短信是否有效
 	 * @param mobile
 	 * @param smsCode
-	 * @return
+	 * @return true 有效 , false 无效
 	 */
 	public boolean checkValid(String mobile ,String smsCode);
 }

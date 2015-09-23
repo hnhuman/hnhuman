@@ -13,8 +13,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.hnhuman.entity.Human.Gender;
 import com.hnhuman.entity.ext.Message;
-import com.hnhuman.service.HumanService;
+import com.hnhuman.entity.ext.ReturnCode;
+import com.hnhuman.entity.ext.ReturnCode.Register;
 import com.hnhuman.service.RSAService;
+import com.hnhuman.service.RegisterService;
 
 /**
  * Controller - 注册
@@ -23,13 +25,14 @@ import com.hnhuman.service.RSAService;
  *
  */
 @Controller("registerController")
+@RequestMapping("/register")
 public class RegisterController {
 	
 	@Resource(name="rsaServiceImpl")
 	RSAService rsaService;
-	@Resource(name="humanServiceImpl")
-	HumanService HumanService;
-
+	@Resource(name="registerServiceImpl")
+	RegisterService registerService;
+	
 	/**
 	 * 注册页面
 	 */
@@ -43,12 +46,24 @@ public class RegisterController {
 	 * 提交注册信息
 	 * @return
 	 */
-	@RequestMapping(method = RequestMethod.POST)
+	@RequestMapping(value = "/submit.do" , method = RequestMethod.POST)
 	@ResponseBody
-	public Message submit(String username , String smsCode , 
+	public Message submit(String mobile , String smsCode , 
 			HttpServletRequest request, HttpServletResponse response, HttpSession session){
 		String password = rsaService.decryptParameter("enPassword", request);
 		rsaService.removePrivateKey(request);
-		return Message.success("注册成功");
+		int result = registerService.register(mobile, password, smsCode);
+		switch (result) {
+			case ReturnCode.SUCCESS_CODE:
+				return Message.success("注册成功");
+			case Register.MOBILE_ERROR_CODE_1:
+				return Message.error(Register.MOBILE_ERROR_MSG_1);
+			case Register.MOBILE_ERROR_CODE_2:
+				return Message.error(Register.MOBILE_ERROR_MSG_2);
+			case Register.SMSCODE_ERROR_CODE_1:
+				return Message.error(Register.SMSCODE_ERROR_MSG_1);
+			default :
+				return null;
+		}
 	}
 }

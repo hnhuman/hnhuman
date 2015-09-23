@@ -1,4 +1,4 @@
-package com.hnhuman.core;
+package com.hnhuman.core.security;
 
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;

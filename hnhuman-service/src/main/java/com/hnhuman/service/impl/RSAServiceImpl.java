@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 
-import com.hnhuman.core.RSAUtils;
+import com.hnhuman.core.security.RSAUtils;
 import com.hnhuman.service.RSAService;
 
 /**
