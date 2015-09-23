@@ -45,7 +45,7 @@ public class RegisterController {
 	 */
 	@RequestMapping(method = RequestMethod.POST)
 	@ResponseBody
-	public Message submit(String username , String smCode , 
+	public Message submit(String username , String smsCode , 
 			HttpServletRequest request, HttpServletResponse response, HttpSession session){
 		String password = rsaService.decryptParameter("enPassword", request);
 		rsaService.removePrivateKey(request);

@@ -6,5 +6,11 @@ package com.hnhuman.service;
  *
  */
 public interface RegisterService {
-
+	/**
+	 * 注册
+	 * @param mobile
+	 * @param password
+	 * @param smCode
+	 */
+	public void register(String mobile , String password , String smsCode);
 }
